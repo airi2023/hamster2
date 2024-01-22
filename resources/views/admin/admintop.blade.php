@@ -4,6 +4,7 @@
     <section id="new">
         <div class="container">
             <h3>新着情報　直近の記事</h3>
+            <p>test</p>
         </div>
 
         <div class="container">
