@@ -1,0 +1,59 @@
+#mitsumori-js {
+    /* background-color:#FFF; */
+    padding:20px;
+    /* max-height:600px; */
+    box-sizing:border-box;
+}
+#mitsumori-js table {
+    width:100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color:#FFF;
+}
+#mitsumori-js .mitsumori-js-tbl {
+    margin-bottom:15px;
+}
+#mitsumori-js .mitsumori-js-tbl thead {
+    background-color: #FFA07A;
+}
+
+/* 合計 */
+#mitsumori-js .mitsumori-js-total-tbl {
+    max-width:480px;
+    margin-left:auto;
+}
+#mitsumori-js .mitsumori-js-total-tbl th {
+    width:45%;
+}
+#mitsumori-js th,
+#mitsumori-js td {
+    border:1px solid #000;
+    padding:12px;
+}
+#mitsumori-js .item-name {
+    width:30%;
+}
+#mitsumori-js .item-quantity {
+    width:45%;
+}
+#mitsumori-js .item-price {
+    width:25%;
+}
+
+
+
+/* PC表示のみ ------------------------------*/
+/* @media screen and (min-width: 991px) {
+
+} */
+
+/* タブレットサイズ ------------------------------*/
+/* @media screen and (max-width:991px) {
+
+} */
+
+/* スマホサイズ ------------------------------*/
+/* @media screen and (max-width:768px) {
+
+} */
+

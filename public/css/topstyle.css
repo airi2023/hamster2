@@ -1,0 +1,729 @@
+/* Googleフォント */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+
+/* bootstrapのデフォルトCSS変更 ---------------*/
+.navbar {
+    /* ナビ背景色 */
+    /* background: rgba(13, 11, 35, 0.9) !important; */
+    background-color: #FFBD77 !important;
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+}
+
+/* スマホメニュー文字中央揃え */
+.navbar-collapse {
+    text-align: center;
+}
+
+
+/* aタグ関係 */
+.navbar-expand-lg .navbar-nav .nav-link {
+    /* ナビ間の内側余白 */
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    /* ナビ文字色 */
+    /* font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif; */
+    /* font-family: "游ゴシック"; */
+    font-family: 'Zen Maru Gothic', serif;
+    font-weight: bold;
+}
+
+/* ナビホバー時*/
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    transition: all 0.5s;
+}
+
+/* 管理者ボタンだけ色変更 */
+.navbar-expand-lg .navbar-nav .adminbtn {
+    background: #5f3c17;
+}
+
+/* 中央から下線 アニメーション */
+.navbar-expand-lg .navbar-nav .nav-link {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    right: 100%;
+    bottom: 0;
+    height: 1px;
+    /* background-color: #30a9de; */
+    background-color: #fff;
+    -webkit-transition: left 0.3s ease, right 0.3s ease;
+    -moz-transition: left 0.3s ease, right 0.3s ease;
+    -o-transition: left 0.3s ease, right 0.3s ease;
+    transition: left 0.3s ease, right 0.3s ease;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover::before {
+    left: 0;
+    right: 0;
+}
+
+
+/* 全体共通 ------------------------------------------ */
+body {
+    color: #333333;
+    background-color: #F6E9D7;
+    /* font-size: 100%; */
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 auto;
+    /*中央揃え*/
+    width: 100%;
+    /* font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif; */
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    /* min-height: 200vw; */
+    position: relative;
+}
+
+/* メイン画像 静止画の場合 ---------------*/
+/* .top {
+            background-image: url(http://127.0.0.1:8001/images/2.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center top 14%;
+            height: 44vw;
+            width: 100%;
+            margin-bottom: 70px;
+        }
+
+        .top:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: center top /100%;
+            background-color: rgba(13, 11, 36, 0.2);
+        } */
+
+/* スライダー --------------- */
+#carousel-2:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: center top /100%;
+    background-color: rgba(13, 11, 36, 0.2);
+    position: absolute;
+    z-index: 2;
+}
+
+.carousel-item {
+    transition: transform 2s ease, opacity .5s ease-out;
+}
+
+
+/* スライダー上の文字 */
+.slider-text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    -ms-transform: translate(-50%, -50%);
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+    z-index: 150;
+    color: #fff;
+    line-height: 2.5;
+}
+
+.slider-text h2 {
+    margin: 0;
+    padding: 0;
+    /* font-size: 2rem; */
+    font-size: 3vw;
+    color: #fff;
+    text-align: left;
+    /* 游明朝体 */
+    /* font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif; */
+    font-family: 'Zen Maru Gothic', serif;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.slider-text p {
+    margin: 0.5vw 0 0 0.5vw;
+    padding: 0;
+    font-size: 1vw;
+    text-align: left;
+    /* font-family: "游明朝体"; */
+    font-family: 'Zen Maru Gothic', serif;
+}
+
+
+/* スクロールダウン */
+.scrolldown {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: calc(27% - 28px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000;
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+.text {
+    display: block;
+    margin-top: 75px;
+    margin-left: -30px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+}
+
+.text a {
+    color: #fff;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
+}
+
+/* スライダー関係ここまで ---------------*/
+
+
+/* フッター --------------- */
+footer {
+    color: #fff;
+    background-color: #FEBC77;
+    position: absolute;
+    bottom: -420px;
+    width: 100%;
+    height: 430px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer .address {
+    max-width: 100%;
+    padding: 20px 0 5px;
+    background: #febc77;
+    border-top: dotted 1px #fff;
+}
+
+.footer p {
+    /* margin-top: 20px; */
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+footer .nav-item {
+    width: 20%;
+    min-width: 150px;
+    margin: 0 auto;
+}
+
+footer .nav-item a {
+    color: #fff;
+}
+
+footer .nav-item a:hover {
+    opacity: 0.7;
+    color: #fff;
+}
+
+
+
+footer address {
+    font-size: 12px;
+    background-color: #FEBC77;
+}
+
+
+/* 記事フェードイン--------------- */
+.fadeIn {
+    /* transform: translate3d(0, 50px, 0); */
+    transition: 2s;
+    opacity: 0;
+}
+
+.fadeIn.animated {
+    /* transform: translate3d(0, 0, 0); */
+    opacity: 1;
+}
+
+
+/* コンテンツ ------------------------------*/
+/* 下層ページのみ */
+.subpage .contents {
+    padding: 150px 0 100px;
+}
+
+/*全体 見出し */
+.contents h2,
+.contents h3,
+.contents h4 {
+    background-color: #FFBD77;
+    color: #fff;
+    text-align: center;
+    /* font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif; */
+    font-family: 'Zen Maru Gothic', serif;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+/* 見出し */
+.contents h5 {
+    background: none;
+    color: #333;
+    border-bottom: solid 3px #FFA07A;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+/* ボタン共通 */
+.btn {
+    color: #fff;
+    background: #FFA07A;
+    max-height: 70px;
+    max-width: 140px;
+    text-align: center;
+}
+
+/* section 余白調整 */
+section {
+    padding: 100px 0 150px;
+}
+
+section:nth-of-type(even) {
+    background: url(/images/back1.png) bottom center /10% no-repeat;
+}
+
+/* 画像共通 */
+section img {
+    width: 100%;
+}
+
+/* 背景色 偶数時のみ白 */
+section:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+/* section内の記事位置調整 */
+section .container .row .section_padding {
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+
+/* section内の記事見出し */
+section .container .row .section_padding h4 {
+    background: none;
+    color: #333;
+    border-bottom: solid 3px #FFA07A;
+    font-size: 20px;
+}
+
+
+/* 新着情報 -----------------*/
+/* 共通 記事*/
+.intro {
+    text-align: center;
+}
+.card {
+    border: none;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.card-subtitle{
+    margin-bottom: 10px;
+}
+
+.card-body .wrap-img{
+    text-align: center;
+}
+
+.card img {
+    max-width: 320px;
+    max-height: 210px;
+    object-fit: cover;
+}
+
+/* #new .row .col-md-3 .btn {
+    margin: auto;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 70px);
+} */
+
+#new .row .col-md-3 .btn:hover {
+    color: #fff;
+    cursor: default;
+}
+
+#new .btn.more {
+    margin: 60px auto 80px;
+    max-width: 200px;
+    padding: 1.5vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 21px;
+}
+
+/* ハムスターの種類 */
+#type>.container:nth-of-type(1) {
+    margin-bottom: 70px;
+}
+
+#type .inner .container {
+    margin-bottom: 70px;
+    padding-bottom: 70px;
+    border-bottom: dotted 2px #FFA07A;
+}
+
+#type .inner .container:last-of-type {
+    margin-bottom: 0px;
+}
+
+/* 見積り ------------------------------*/
+/* ぼかし */
+.blurBg {
+    background: url(/images/money1.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 90px;
+    min-height: 280px;
+    height: 18vw;
+}
+
+.blurBg:before {
+    content: '';
+    background: inherit;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+}
+
+.blurBg:after {
+    content: '';
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+}
+
+.blurBg h3 {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 300px;
+    height: 60px;
+    border-bottom: solid 2px #fff;
+    background: none !important;
+}
+
+.blurBg .btn {
+    margin-top: 50px;
+}
+
+
+/* 飼育グッズ ------------------------------*/
+#goods .intro {
+    text-align: center;
+}
+
+/* 店舗紹介 ------------------------------*/
+#access p {
+    text-align: center;
+}
+
+/* お問い合わせ ------------------------------*/
+#contact .intro {
+    text-align: center;
+}
+
+
+/* 下層ページ-------------------------------------------------- */
+/* 共通 */
+.subpage .top-wrap {
+    position: relative;
+}
+
+.subpage .top {
+    background-image: url(/images/money1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom 22%;
+    height: 30vw;
+    min-height: 200px;
+    width: 100%;
+    margin-bottom: 5vw;
+    position: relative;
+}
+
+.top:before {
+    content: '';
+    background: inherit;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* .top:after {
+    content: '';
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+} */
+
+.subpage .top-wrap .slider-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 150;
+    color: #fff;
+    line-height: 2.5;
+    border-bottom: solid 0.3vw #fff;
+}
+
+/* 記事 */
+.subpage .contents {
+    padding-top: 40px;
+}
+
+/* 見積りページ------------------------ */
+.subpage .price-wrap+div.top {
+    background-image: url(/images/money1.jpg);
+}
+
+.subpage .price p {
+    text-align: center;
+}
+
+/* 新着情報ページ------------------------ */
+.subpage .news-wrap+div.top {
+    background-image: url(/images/slide1.jpg);
+}
+
+
+/* ナビ微調整 ------------------------------*/
+@media screen and (min-width: 1801px) {
+
+    /* ロゴ幅考慮 ナビ位置調整 */
+    .navbar-collapse {
+        padding-right: 130px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    .navbar-collapse {
+        padding-right: 0px;
+    }
+}
+
+@media screen and (min-width:1101px) and (max-width:1330px) {
+    .navbar-expand-lg .navbar-nav .nav-item a {
+        padding: 0.5rem 10px;
+    }
+}
+
+@media screen and (min-width:1021px) and (max-width:1100px) {
+    .navbar-expand-lg .navbar-nav .nav-item a {
+        padding: 0.5rem 5px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1020px) {
+    .navbar-expand-lg .navbar-nav .nav-item a {
+        padding: 0.5rem 3px;
+    }
+}
+
+/* PC表示のみ ------------------------------*/
+@media screen and (min-width: 991px) {
+    /* ナビ間の外側余白 */
+    .navbar-expand-lg .navbar-nav .nav-item {
+        /* margin: 0 10px; */
+        border-right: solid 1px #fff;
+    }
+
+    /* 記事内余白 */
+    section .container .row .section_padding {
+        padding: 0 40px;
+    }
+
+    /* 新着情報記事 */
+    .article-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}
+
+/* タブレットサイズ ------------------------------*/
+@media screen and (min-width:768px) and (max-width:991px) {
+    /* 新着情報記事 */
+    .article-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col-md-4 {
+        width: 50%!important;
+    }
+}
+
+
+/* スマホサイズ ------------------------------*/
+@media screen and (max-width:768px) {
+
+    /* ナビ全体 余白調整 */
+    .navbar {
+        padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    }
+
+    /* スマホ時 スクロールダウン非表示 */
+    .scrolldown {
+        display: none;
+    }
+
+    section:nth-of-type(even) {
+        background: url(/images/back1.png) bottom center /25% no-repeat;
+    }
+
+    /* スライダー*/
+    .carousel {
+        margin-top: 8vw;
+    }
+
+    /* セクション全体 */
+    section {
+        padding: 60px 0 70px;
+    }
+
+    /* 記事余白　調整 */
+    #type>.container:nth-of-type(1) {
+        margin-bottom: 50px;
+    }
+
+    #type .inner .container {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+    }
+
+    /* 見積り */
+    .blurBg {
+        min-height: 140px;
+        height: 24vw;
+        padding: 4vw 0;
+    }
+
+    .blurBg .btn {
+        margin-top: 4vw;
+    }
+
+    .blurBg h3 {
+        font-size: 18px;
+        height: 50px;
+    }
+}

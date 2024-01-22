@@ -1,0 +1,74 @@
+/* bootstrapのデフォルトCSS変更 ---------------*/
+.navbar {
+    /* ナビ背景色 */
+    background-color: #5f3c17 !important;
+}
+
+.navbar-collapse {
+    justify-content: flex-start !important;
+    margin-left: 50px;
+}
+
+li.nav-item:last-of-type {
+    border-right: none !important;
+}
+
+/* 共通------------------------------------------------*/
+/* ナビ下余白調整 */
+.contents {
+    margin: 170px 0 80px;
+}
+
+/* section*/
+section {
+    padding: 0;
+}
+
+section:nth-of-type(odd) {
+    background-color: #F6E9D7;
+}
+
+/* フッター --------------- */
+footer {
+    height: 0px;
+    padding: 15px 0 30px;
+    background: #5f3c17;
+    bottom: inherit;
+}
+
+footer address {
+    font-size: 12px;
+    background: #5f3c17;
+}
+
+/* 新着情報---------------------------- */
+.news-imgwrap {
+    text-align: center;
+}
+
+.news-btnwrap {
+    text-align: right;
+}
+
+.card img {
+    max-width: 320px;
+    max-height: 210px;
+    object-fit: cover;
+}
+
+/* タブレットサイズ ------------------------------*/
+@media screen and (max-width:991px) {
+    .navbar-collapse {
+        margin-left: 0px;
+    }
+}
+
+/* スマホサイズ ------------------------------*/
+@media screen and (max-width:768px) {
+
+    /* ナビ下余白調整 */
+    .contents {
+        margin: 130px 0 80px;
+    }
+
+}
